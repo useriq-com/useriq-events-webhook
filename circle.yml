@@ -1,0 +1,11 @@
+machine:
+  timezone:
+    America/New_York
+  environment:
+    DATABASE_URL: postgres://postgres@127.0.0.1:5433/postgres
+    CASSANDRA_KEYSPACE: useriq_test
+  node:
+    version: 8.10.0
+  services:
+    - cassandra
+    - redis
