@@ -1,6 +1,8 @@
+const appName = process.env.APP_NAME || "useriq-events-webhook"
+
 export default {
   app: {
-    name: process.env.APP_NAME || "useriq-events-webhook"
+    name: appName
   },
 
   server: {
@@ -11,7 +13,7 @@ export default {
 
   logger: {
     options: {
-      name: process.env.APP_NAME || "useriq_bigdata_stream",
+      name: appName,
       level: process.env.LOGGING_LEVEL || "info",
       stream: process.stdout
       /*streams: [

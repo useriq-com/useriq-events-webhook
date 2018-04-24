@@ -9,7 +9,7 @@ const log         = bunyan.createLogger(config.logger.options)
 const app         = express()
 const httpServer  = http.Server(app)
 
-// entry point to collector
+// entry point to clustering (non-sticky) web server
 throng({
   workers:  config.server.concurrency,
   lifetime: Infinity,
@@ -19,7 +19,7 @@ throng({
 
 
 //FUNCTIONS
-async function startApp() {
+function startApp() {
   app.use(bodyParser.urlencoded({extended:true, limit:'1mb'}))
   app.use(bodyParser.json({limit:'1mb'}))
 
